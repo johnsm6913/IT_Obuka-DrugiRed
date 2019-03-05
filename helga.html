@@ -1,3 +1,69 @@
+<!doctype html>
 <html>
-    
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                margin: 15px;
+                background-image: url(bg2.jpg);
+                text-align: center;
+                background-position: center top; 
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+                height: 100vh;
+                /* position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); */
+                font-family: Georgia, serif;
+            }
+            h1 {
+                color: white;
+                text-shadow: 0px 0px 3px black;
+                /* text-transform: uppercase; */
+            }
+            .show {
+                height: 35px;
+                width: 80px;
+            }
+            .showNumbers {
+                color: white;
+                font-weight: 600;
+                /* min-width: 300px; */
+                /* width: 700px; */
+                margin-top: 25px;
+                margin-bottom: 15px;
+                background: rgba(0, 0, 0, 0.30);
+            }
+        </style>
+        <title>Deli sa 5 i/ili 3</title>
+        <script>
+            function canBeDevidedBy() {
+                var number = 1;
+                var html = '';
+                html += '<br />';
+                while (number <= 100) { 
+                    if (number % 3 === 0 && number % 5 === 0) {
+                        html += '<p style="text-align: center";>' + number + ' je deljiv sa 3 i 5 </p>';
+                    } else { 
+                        if (number % 3 === 0) {
+                            html += '<p style="text-align: left; margin-left: 15px";>' + number + ' je deljiv sa 3 </p>';
+                        }
+                        if (number % 5 === 0) {
+                            html += '<p style="text-align: right; margin-right: 15px";>' + number + ' je deljiv sa 5</p>';
+                        }
+                    }
+                    number++;
+                }
+                html += '<br />';
+                document.getElementById('www').innerHTML=html;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Brojevi od 1 do 100 deljivi sa 3 i 5</h1>
+        <button class="show" onclick="canBeDevidedBy()">Prikaži</button>
+        <div class="showNumbers" id="www"></div>
+    </body>
 </html>
