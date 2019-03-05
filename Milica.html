@@ -1,2 +1,52 @@
-1. red
-2. red
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Javascript: Date/Time Object</title>
+	</head>
+	<body>
+		<h1>JavaScript Date</h1>
+		<div id="date"></div>
+		<br/>
+		<div id="dateY"></div>
+		<br/>
+		<div id="dateM"></div>
+		<br/>
+		<div id="dayD"></div>
+        <br/>
+        <div id="dayT"></div>   
+        <div id="dayYY"></div>   
+        <script>
+        let d = new Date();
+			console.log(d);
+
+			let today = new Date();
+			let myDate = d.getFullYear();
+			let myDateM = d.getMonth();
+			let myDateD = d.getDay();
+			document.getElementById("date").innerHTML = today;
+			document.getElementById("dateY").innerHTML = "Year: " +  myDate;
+			// document.getElementById("dateM").innerHTML = myDateM;
+			// document.getElementById("dateD").innerHTML = myDateD;
+			d.setFullYear(2020);
+
+            var day = new Date();
+            var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            document.getElementById("dayD").innerHTML = days[day.getDay()];
+            document.getElementById("dayD").innerHTML = "Weekday: " + days[day.getDay()];
+
+            console.log(d.getTime());
+
+            let date_of_birth = new Date ('1977-07-12');
+            let a = (today.getTime() - date_of_birth.getTime()) /(24*60*60*1000);
+            document.getElementById("dayT").innerHTML = "Number Of Days: " + a.toFixed(2);
+
+            let myDay = new Date();
+            myDate = myDay.setFullYear(2020);
+            document.getElementById("dayYY").innerHTML = myDay;
+
+
+		</script>
+	</body>
+</html>
